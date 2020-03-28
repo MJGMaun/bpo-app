@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Hash;
-use DataTables;
+use App\DataTables\UsersDataTable;
 use App\User;
 use App\Role;
 use Illuminate\Http\Request;
@@ -16,29 +16,32 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(UsersDataTable $dataTable)
     {
-
-        return view('users', [
-            'users' => User::orderBy('id', 'asc')->get(),
-            'roles' => Role::orderBy('id', 'desc')->get(),
-        ]);
+        // return view('users', [
+        //     'users' => User::orderBy('id', 'asc')->get(),
+        //     'roles' => Role::orderBy('id', 'desc')->get(),
+        // ]);
+        return $dataTable->render('users', [
+                'users' => User::orderBy('id', 'asc')->get(),
+                'roles' => Role::orderBy('id', 'desc')->get(),
+            ]);
     }
 
      /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. (API)
      *
      * @return \Illuminate\Http\Response
      */
     public function list()
     {
-        $users = User::orderBy('id', 'asc')->get();
+        $users = User::orderBy('id', 'asc')->with('role')->get();
 
         return Datatables::of($users)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
 
-                           $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+                           $btn = '<button type="button" class="btn btn-alt-info" data-toggle="modal" data-target="#modal-extra-large">Launch Modal</button>';
 
                             return $btn;
                     })

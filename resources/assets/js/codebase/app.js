@@ -8,6 +8,7 @@
 // Import global dependencies
 import './bootstrap';
 
+
 // Import required modules
 import Tools from './modules/tools';
 import Helpers from './modules/helpers';

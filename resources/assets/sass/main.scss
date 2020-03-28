@@ -107,7 +107,7 @@
 // Third party plugins (style overrides)
 @import 'vendor/bootstrap-datepicker';
 @import 'vendor/dropzonejs';
-@import 'vendor/datatables';
+// @import 'vendor/datatables';
 @import 'vendor/easy-pie-chart';
 @import 'vendor/flot-charts';
 @import 'vendor/fullcalendar';
@@ -125,6 +125,9 @@
 @import 'vendor/summernote';
 @import 'vendor/pwstrength';
 @import 'vendor/nestable2';
+// DataTables
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+@import "~datatables.net-buttons-bs4/css/buttons.bootstrap4.css";
 
 // User styles (your own styles/overrides)
 @import 'custom/main';
