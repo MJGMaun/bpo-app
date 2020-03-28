@@ -25,7 +25,12 @@ mix
     .js('resources/assets/js/codebase/app.js', 'public/js/codebase.app.js')
 
     /* Tools */
-    .browserSync('localhost:8000')
+    .browserSync({
+        proxy: 'localhost:8000',
+        files: [
+            'resources/**/*'
+        ]
+    })
     .disableNotifications()
 
     /* Options */
