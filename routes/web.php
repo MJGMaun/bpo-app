@@ -13,7 +13,7 @@
 
 // Example Routes
 Route::view('/', 'landing')->middleware('auth');
-Route::view('home', 'dashboard')->middleware('auth');
+Route::view('dashboard', 'dashboard')->middleware('auth');
 Route::resource('users', 'UserController')->middleware('auth');
 
 
