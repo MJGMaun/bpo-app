@@ -19,14 +19,14 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('media/favicons/apple-touch-icon-180x180.png') }}">
 
         <!-- Fonts and Styles -->
-        @yield('css_before')
+        @stack('css_before')
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
         <link rel="stylesheet" id="css-main" href="{{ mix('/css/codebase.css') }}">
 
         <!-- You can include a specific file from public/css/themes/ folder to alter the default color theme of the template. eg: -->
         <link rel="stylesheet" id="css-theme" href="{{ mix('/css/themes/corporate.css') }}">
-        @yield('css_after')
         <link rel="stylesheet" id="css-theme" href="{{ asset('/css/custom-css.css') }}">
+        @stack('css_after')
         <!-- Scripts -->
         <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
     </head>
@@ -183,9 +183,12 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a class="link-effect text-dual-primary-dark" href="javascript:void(0)">
+                                    <a class="link-effect text-dual-primary-dark"  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         <i class="si si-logout"></i>
                                     </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </li>
                             </ul>
                         </div>
@@ -516,6 +519,8 @@
         <!-- Laravel Scaffolding JS -->
         <script src="{{ mix('js/laravel.app.js') }}"></script>
 
-        @yield('js_after')
+        <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+
+        @stack('scripts')
     </body>
 </html>

@@ -1,17 +1,17 @@
 @extends('layouts.backend')
 
-@section('css_before')
+@push('css_before')
     <link rel="stylesheet" href="{{ asset('js/plugins/slick/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('js/plugins/slick/slick-theme.css') }}">
-@endsection
+@endpush
 
-@section('js_after')
+@push('js_after')
     <!-- Page JS Plugins -->
     <script src="{{ asset('js/plugins/slick/slick.min.js') }}"></script>
 
     <!-- Page JS Helpers (Slick Slider Plugin) -->
     <script>jQuery(function(){ Codebase.helpers('slick'); });</script>
-@endsection
+@endpush
 
 @section('content')
     <!-- Page Content -->

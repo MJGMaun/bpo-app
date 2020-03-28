@@ -1,11 +1,11 @@
 @extends('layouts.backend')
 
-@section('css_before')
+@push('css_before')
     <!-- Page JS Plugins CSS -->
     <link rel="stylesheet" href="{{ asset('js/plugins/datatables/dataTables.bootstrap4.css') }}">
-@endsection
+@endpush
 
-@section('js_after')
+@push('js_after')
     <!-- Page JS Plugins -->
     <script src="{{ asset('js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('js/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
@@ -35,7 +35,7 @@
             });
         });
     </script>
-@endsection
+@endpush
 
 @section('content')
     <!-- Page Content -->

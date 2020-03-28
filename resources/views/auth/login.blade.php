@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-
+@section('title', 'Login')
 @section('content')
     <div class="bg-body-dark bg-pattern" style="background-image: url('assets/media/various/bg-pattern-inverse.png');">
         <div class="row mx-0 justify-content-center">
@@ -11,7 +11,7 @@
                             <i class="si si-fire"></i>
                             <span class="font-size-xl text-primary-dark">code</span><span class="font-size-xl">base</span>
                         </a>
-                        <h1 class="h4 font-w700 mt-30 mb-10">Welcome to Your BPO App</h1>
+                        <h1 class="h4 font-w700 mt-30 mb-10">Welcome to Your BPO Appasdadad</h1>
                         <h2 class="h5 font-w400 text-muted mb-0">It’s a great day today!</h2>
                     </div>
                     <!-- END Header -->

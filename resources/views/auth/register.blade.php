@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-
+@section('title', 'Register')
 @section('content')
     <div class="bg-body-dark bg-pattern" style="background-image: url('assets/media/various/bg-pattern-inverse.png');">
         <div class="row mx-0 justify-content-center">
